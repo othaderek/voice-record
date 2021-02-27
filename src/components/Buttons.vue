@@ -1,15 +1,15 @@
 <template>
-  <div class="buttons">
-      <div class="button" id="record" v-on:click="startRecord">
+  <div class="buttons" v-bind:style="{background: bgColor}">
+      <div class="button" id="record" v-on:click="onRecord">
           <p class="button-text">Record</p>
       </div>
-      <div class="button" id="stop" v-on:click="stopRecord">
+      <div class="button" id="stop" v-on:click="onStop">
           <p class="button-text">Stop</p>
       </div>
-      <div class="button" id="play" v-on:click="playRecording">
+      <div class="button" id="play" v-on:click="onPlay">
           <p class="button-text">Play</p>
       </div>
-      <div class="button" id="clear" v-on:click="clearRecording">
+      <div class="button" id="clear" v-on:click="onClear">
           <p class="button-text">Clear</p>
       </div>
   </div>
@@ -17,18 +17,27 @@
 
 <script>
 export default {
+    data() {
+        return {
+            bgColor: "blanchedalmond"
+        }
+    },
     methods: {
-        startRecord(){
+        onRecord(){
             console.log("🔴 Now recording... 🔴");
+            this.bgColor = "#B11B1B"
         },
-        stopRecord(){
+        onStop(){
             console.log("🛑 Recording has stopped 🛑");
+            this.bgColor = "blanchedalmond"
         },
-        playRecording(){
+        onPlay(){
             console.log("🎧 Now playing.. 🎧");
+            this.bgColor = "lightgreen"
         },
-        clearRecording(){
+        onClear(){
             console.log("💣 Recording deleted 💣");
+            this.bgColor = "blanchedalmond"
         }
     }
 }

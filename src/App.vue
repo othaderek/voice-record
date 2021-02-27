@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Audio/>
     <Buttons/>
   </div>
 </template>
 
 <script>
+import Audio from './components/Audio.vue'
 import Buttons from './components/Buttons.vue'
 
 export default {
   name: 'App',
   components: {
+    Audio,
     Buttons
   }
 }
